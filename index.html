@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arrow Escape</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header id="hud" class="hud">
+      <h1 class="title">Arrow Escape</h1>
+      <div class="modes" role="group" aria-label="Game mode">
+        <button class="mode" type="button" data-mode="arrows">Arrows</button>
+        <button class="mode" type="button" data-mode="snakes">Snakes</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="label">Level</span><span id="level" class="value">1</span></div>
+        <div class="stat"><span id="remaining-label" class="label">Arrows</span><span id="remaining" class="value">0</span></div>
+        <div class="stat"><span class="label">Lives</span><span id="lives" class="value hearts"></span></div>
+      </div>
+    </header>
+
+    <div id="tray" class="tray">
+      <div id="board" class="board"></div>
+    </div>
+
+    <div id="controls" class="controls">
+      <button id="hint" class="btn" type="button">Hint</button>
+      <button id="restart" class="btn" type="button">Restart</button>
+      <button id="new" class="btn" type="button">New puzzle</button>
+      <button id="sound" class="btn" type="button">Sound: on</button>
+    </div>
+
+    <p id="help" class="help">
+      Tap an arrow or snake to send it flying head-first. It escapes if the way ahead is
+      clear &mdash; hit anything and you lose a life.
+    </p>
+  </main>
+
+  <div id="overlay" class="overlay" hidden>
+    <div class="card" role="dialog" aria-modal="true" aria-labelledby="overlay-title">
+      <h2 id="overlay-title"></h2>
+      <p id="overlay-text"></p>
+      <div class="card-actions">
+        <button id="overlay-secondary" class="btn" type="button"></button>
+        <button id="overlay-primary" class="btn primary" type="button"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
